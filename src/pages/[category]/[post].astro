@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => [
+  ...(await getCollection('js')).map((post) => ({
+    params: { category: post.collection, post: post.slug },
+  })),
+];
+---
+
+<BaseLayout />
