@@ -1,0 +1,27 @@
+---
+import PageNavigation from '@components/PageNavigation.astro';
+import PageFooter from '@components/PageFooter.astro';
+
+import '@styles/reset.scss';
+import '@styles/main.scss';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? `${title} | Czech Stack` : 'Czech Stack'}</title>
+  </head>
+  <body>
+    <PageNavigation />
+    <slot />
+    <PageFooter />
+  </body>
+</html>
