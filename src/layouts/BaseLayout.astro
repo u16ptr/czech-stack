@@ -1,5 +1,6 @@
 ---
 import PageNavigation from '@components/PageNavigation.astro';
+import PageFooter from '@components/PageFooter.astro';
 
 interface Props {
   title?: string;
@@ -18,5 +19,6 @@ const { title } = Astro.props;
   <body>
     <PageNavigation />
     <slot />
+    <PageFooter />
   </body>
 </html>
